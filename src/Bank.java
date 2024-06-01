@@ -16,8 +16,9 @@ public class Bank {
         //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
         // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
         while (true) {
-            int amount = operationsQueue.getNextItem();
+            int amount = operationsQueue.getNextItem("Deposit");
             if(amount == -9999) {
+                System.out.println("Deposit end for invalid iterruption.");
                 break;
             }
             if (amount>0) {
@@ -35,14 +36,14 @@ public class Bank {
     // A withdraw function that will run in parallel on a separate thread. It will be a loop where in each iteration, it read the amount from the operationQueue and withdraw the amount.
     public void withdraw() {
         while (true) {
-            int amount = operationsQueue.getNextItem();
+            int amount = operationsQueue.getNextItem("Withdraw");
             if(amount == -9999) {
+                System.out.println("Withdraw end for invalid iterruption.");
                 break;
             }
 
             if(balance+amount<0){
-
-                System.out.println("Not enough balance to deposite "+amount);
+                System.out.println("Not enough balance to /'withdraw/' "+amount);
                 continue;
             }
 
