@@ -42,7 +42,7 @@ public class OperationsQueue {
         // System.out.println(name + " - hapaning");
         
         boolean ans = rel.tryLock();
-        int x = -9999;
+        int x = 0;
         
         // * ans is True if resource is not held by any other thread
         if(ans){
@@ -53,7 +53,11 @@ public class OperationsQueue {
                 {
                   x = operations.remove(0);
                 }
-              Thread.sleep((int) (Math.random() * 80));
+                else
+                {
+                    x = -9999;
+                }
+               Thread.sleep((int) (Math.random() * 80));
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
@@ -66,15 +70,7 @@ public class OperationsQueue {
         {
             System.out.println("waiting for - " + name);
         }
-
-        // while(operations.isEmpty()) {
-        //     try {
-        //         Thread.sleep(100);
-        //     } catch (InterruptedException e) {
-        //         e.printStackTrace();
-        //     }
-        // }
-        // * remove the index = 0 and give operation[0]
+        
         return x;
     }
 }

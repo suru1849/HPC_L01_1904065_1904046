@@ -18,8 +18,16 @@ public class Bank {
         while (true) {
             int amount = operationsQueue.getNextItem("Deposit");
             if(amount == -9999) {
-                System.out.println("Deposit end for invalid iterruption.");
                 break;
+            }
+             // * added
+            if(amount == 0){
+                try {
+                    Thread.sleep(200);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                continue;
             }
             if (amount>0) {
                 balance =  balance + amount;
@@ -38,8 +46,18 @@ public class Bank {
         while (true) {
             int amount = operationsQueue.getNextItem("Withdraw");
             if(amount == -9999) {
-                System.out.println("Withdraw end for invalid iterruption.");
                 break;
+            }
+
+            // * added
+            if(amount == 0){
+                try {
+                    Thread.sleep(200);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                continue;
+                
             }
 
             if(balance+amount<0){
