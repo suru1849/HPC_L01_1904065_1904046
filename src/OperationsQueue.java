@@ -37,7 +37,8 @@ public class OperationsQueue {
     public void add(int amount) {
         operations.add(amount);
     }
-
+    
+    // Critical section
     public int getNextItem(String name) {
         // add a small delay to simulate the time taken to get the next operation.
         // * if operations list is empty then it will be an infinite loop.

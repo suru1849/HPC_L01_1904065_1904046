@@ -23,7 +23,7 @@ public class Bank {
              // * added
             if(amount == 0){
                 try {
-                    Thread.sleep(200);
+                    Thread.sleep(150);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
