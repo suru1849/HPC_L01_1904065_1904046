@@ -5,6 +5,9 @@ public class OperationsQueue {
     // * List
     private final List<Integer> operations = new ArrayList<>();
 
+    // * flag for fist time check the empty operations list
+    // private boolean flag = true;
+
     // * Reentrant lock
     ReentrantLock rel;
 
@@ -20,7 +23,6 @@ public class OperationsQueue {
             int random = (int) (Math.random() * 200) - 100;
             if (random != 0) {
                 operations.add(random);
-                // *
                 System.out.println(i + ". New operation added: " + random);
             }
             // add small delay to simulate the time taken for a new customer to arrive
@@ -40,6 +42,14 @@ public class OperationsQueue {
         // add a small delay to simulate the time taken to get the next operation.
         // * if operations list is empty then it will be an infinite loop.
         // System.out.println(name + " - hapaning");
+        // if(flag){
+        //     if(operations.isEmpty()){
+        //         System.out.println("List is empty");
+        //         flag = false;
+        //         return 0;
+        //     }
+        // }
+        System.out.println(operations.size());
         
         boolean ans = rel.tryLock();
         int x = 0;

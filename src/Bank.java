@@ -52,7 +52,7 @@ public class Bank {
             // * added
             if(amount == 0){
                 try {
-                    Thread.sleep(200);
+                    Thread.sleep(100);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -61,7 +61,7 @@ public class Bank {
             }
 
             if(balance+amount<0){
-                System.out.println("Not enough balance to /'withdraw/' "+amount);
+                System.out.println("Not enough balance to \'withdraw\' "+amount);
                 continue;
             }
 

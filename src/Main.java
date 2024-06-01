@@ -48,7 +48,6 @@ public class Main {
         System.out.println("completed");
 
 
-        System.out.println("completed");
 
     }
 }
