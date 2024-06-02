@@ -9,7 +9,7 @@ public class OperationsQueue {
     // private boolean flag = true;
 
     // * Reentrant lock
-    ReentrantLock rel;
+    private ReentrantLock rel;
 
     OperationsQueue(ReentrantLock rel)
     {
@@ -50,7 +50,7 @@ public class OperationsQueue {
         //         return 0;
         //     }
         // }
-        System.out.println(operations.size());
+        System.out.println("List size - " + operations.size());
         
         boolean ans = rel.tryLock();
         int x = 0;
